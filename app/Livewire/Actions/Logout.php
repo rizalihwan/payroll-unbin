@@ -12,6 +12,7 @@ class Logout
      */
     public function __invoke(): void
     {
+        redirect()->route('login');
         Auth::guard('web')->logout();
 
         Session::invalidate();
