@@ -12,4 +12,9 @@ class SalarySlip extends Model
     {
         return $this->belongsTo(Employee::class);
     }
+
+    public function getStatusTransferAttribute()
+    {
+        return $this->status == 0 ? 'Not Yet Transferred' : 'Already Transferred';
+    }
 }

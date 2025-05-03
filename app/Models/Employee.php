@@ -27,4 +27,28 @@ class Employee extends Model
     {
         return $this->hasMany(Leave::class);
     }
+
+    public function getGenderAttribute($value)
+    {
+        switch ($value) {
+            case 0:
+                $status = 'Pria';
+                break;
+
+            case 1:
+                $status = 'Perempuan';
+                break;
+
+            default:
+                $status = 'Status not found.';
+                break;
+        }
+
+        return $status;
+    }
+
+    public function getFullNameAttribute()
+    {
+        return $this->first_name . ' ' . $this->last_name . ' (' . $this->user->nip . ')';
+    }
 }

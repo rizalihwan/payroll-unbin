@@ -47,13 +47,13 @@ class User extends Authenticatable
         ];
     }
 
-    public function superiors()
+    public function superior()
     {
-        return $this->hasMany(Superior::class);
+        return $this->hasOne(Superior::class);
     }
 
-    public function employees()
+    public function employee()
     {
-        return $this->hasMany(Employee::class);
+        return $this->hasOne(Employee::class);
     }
 }

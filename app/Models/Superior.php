@@ -12,4 +12,23 @@ class Superior extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function getGenderAttribute($value)
+    {
+        switch ($value) {
+            case 0:
+                $status = 'Pria';
+                break;
+
+            case 1:
+                $status = 'Perempuan';
+                break;
+
+            default:
+                $status = 'Status not found.';
+                break;
+        }
+
+        return $status;
+    }
 }

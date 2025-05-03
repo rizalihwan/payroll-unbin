@@ -51,6 +51,14 @@ new class extends Component {
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @if (auth()->user()->role == 0)
+                        <x-nav-link :href="route('department.index')" :active="request()->routeIs(['department.index', 'department.create', 'department.edit'])" wire:navigate>
+                            {{ __('Department') }}
+                        </x-nav-link>
+                    @endif
+                    <x-nav-link :href="route('salary-slip.index')" :active="request()->routeIs(['salary-slip.index', 'salary-slip.create', 'salary-slip.edit'])" wire:navigate>
+                        {{ __('Salary Slip') }}
+                    </x-nav-link>
                 </div>
             </div>
 
