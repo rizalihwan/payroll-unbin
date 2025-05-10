@@ -28,8 +28,8 @@ Web yang dibuat untuk memudahkan manajemen pembayaran gaji dan cuti(progress) ke
 
 1. **Clone Repository**
 ```bash
-git clone https://github.com/rizalihwan/perpustakaan.git
-cd perpustakaan
+git clone https://github.com/rizalihwan/payroll-updated.git
+cd payroll-updated
 composer install
 npm install
 copy .env.example .env
