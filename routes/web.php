@@ -16,14 +16,18 @@ Route::view('profile', 'profile')
 
 Route::group(['middleware' => ['auth']], function () {
     // department
-    Route::get('/department', \App\Livewire\Department\Index::class)->name('department.index');
-    Route::get('/department/create', \App\Livewire\Department\create::class)->name('department.create');
-    Route::get('/department/edit/{id}', \App\Livewire\Department\edit::class)->name('department.edit');
+    Route::group(['prefix' => 'department', 'as' => 'department.'], function () {
+        Route::get('/', \App\Livewire\Department\Index::class)->name('index');
+        Route::get('/create', \App\Livewire\Department\create::class)->name('create');
+        Route::get('/edit/{id}', \App\Livewire\Department\edit::class)->name('edit');
+    });
 
     // salary slip
-    Route::get('/salary-slip', \App\Livewire\SalarySlip\Index::class)->name('salary-slip.index');
-    Route::get('/salary-slip/create', \App\Livewire\SalarySlip\create::class)->name('salary-slip.create');
-    Route::get('/salary-slip/edit/{id}', \App\Livewire\SalarySlip\edit::class)->name('salary-slip.edit');
+    Route::group(['prefix' => 'salary-slip', 'as' => 'salary-slip.'], function () {
+        Route::get('/', \App\Livewire\SalarySlip\Index::class)->name('index');
+        Route::get('/create', \App\Livewire\SalarySlip\create::class)->name('create');
+        Route::get('/edit/{id}', \App\Livewire\SalarySlip\edit::class)->name('edit');
+    });
 });
 
 require __DIR__ . '/auth.php';
