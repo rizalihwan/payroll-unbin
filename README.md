@@ -40,7 +40,7 @@ copy .env.example .env
 DB_CONNECTION=pgsql
 DB_HOST=127.0.0.1
 DB_PORT=5432
-DB_DATABASE=perpus
+DB_DATABASE=payroll
 DB_USERNAME=postgres
 DB_PASSWORD=root
 ```
@@ -54,6 +54,7 @@ php artisan db:seed
 
 4. **Jalankan website**
 ```command
+php artisan optimize:clear
 php artisan serve
 ```
 
