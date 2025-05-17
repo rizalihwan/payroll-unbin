@@ -29,7 +29,7 @@ Web yang dibuat untuk memudahkan manajemen pembayaran gaji dan cuti(progress) ke
 1. **Clone Repository**
 ```bash
 git clone https://github.com/rizalihwan/payroll-unbin.git
-cd payroll-updated
+cd payroll-unbin
 composer install
 npm install
 copy .env.example .env
